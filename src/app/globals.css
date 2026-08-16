@@ -89,5 +89,7 @@ code,
 kbd,
 pre,
 samp {
-  font-feature-settings: "calt" 1, "liga" 1;
+  font-feature-settings:
+    "calt" 1,
+    "liga" 1;
 }
