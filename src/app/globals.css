@@ -23,12 +23,12 @@
 /* Dark — follows the OS setting, or a `data-theme` override on <html>. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --background: #01030e;
-    --surface: #020818;
-    --foreground: #b6c0d3;
-    --muted: #7889a6;
-    --accent: #7cb2ff;
-    --border: #0a1428;
+    --background: #111318;
+    --surface: #181b23;
+    --foreground: #c8cdd8;
+    --muted: #8b92a4;
+    --accent: #6ba3f7;
+    --border: #252830;
     --selection-bg: #ffffff;
     --selection-fg: #010412;
     --switch-knob: var(--background);
@@ -38,12 +38,12 @@
 }
 
 :root[data-theme="dark"] {
-  --background: #01030e;
-  --surface: #020818;
-  --foreground: #b6c0d3;
-  --muted: #7889a6;
-  --accent: #7cb2ff;
-  --border: #0a1428;
+  --background: #111318;
+  --surface: #181b23;
+  --foreground: #c8cdd8;
+  --muted: #8b92a4;
+  --accent: #6ba3f7;
+  --border: #252830;
   --selection-bg: #ffffff;
   --selection-fg: #010412;
   --switch-knob: var(--background);
