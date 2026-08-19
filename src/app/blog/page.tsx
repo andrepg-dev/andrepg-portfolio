@@ -9,7 +9,7 @@ export default function BlogPage() {
     <main className='mx-auto w-full max-w-2xl px-6 py-24'>
       <div className='gap-4 flex flex-col'>
         <div>
-          <h1 className='text-2xl font-bold'>Blog</h1>
+          <h1 className='text-2xl font-medium'>Blog</h1>
           <p className='text-muted text-lg'>
             Thoughts on code, AI agents, and books that shaped how I think.
           </p>
@@ -41,7 +41,7 @@ export default function BlogPage() {
               </h2>
 
               <p className='text-muted mt-1'>{post.excerpt}</p>
-                <div className='flex items-center gap-3 mt-2 text-sm font-mono text-muted'>
+              <div className='flex items-center gap-3 mt-2 text-sm font-mono text-muted'>
                 <span>{getReadingTime(post.content)}</span>
                 <span>·</span>
                 {post.tags.map((tag, i) => (

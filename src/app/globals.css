@@ -4,7 +4,7 @@
   color-scheme: light dark;
 
   /* Light */
-  --background: #f1faff;
+  --background: #f5fbff;
   --surface: #ffffff;
   --foreground: #12283f;
   --muted: #4a6076;
@@ -62,7 +62,7 @@
   --color-switch-track: var(--switch-track);
   --color-switch-border: var(--switch-border);
   --font-serif: var(--font-body);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-space-grotesk);
   --font-mono: var(--font-fira-code);
 }
 

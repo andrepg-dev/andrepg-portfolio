@@ -16,7 +16,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
   const tags = getAllTags()
 
   return (
-    <main className='mx-auto w-full max-w-3xl px-6 py-24 text-lg'>
+    <main className='mx-auto w-full max-w-2xl px-6 py-24 text-lg'>
       <div className='gap-6 flex flex-col'>
         <div>
           <p className='text-sm font-mono text-muted mb-1'>

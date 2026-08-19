@@ -17,7 +17,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const paragraphs = post.content.split('\n\n')
 
   return (
-    <main className='mx-auto w-full max-w-3xl px-6 py-24 text-lg'>
+    <main className='mx-auto w-full max-w-2xl px-6 py-24 text-lg'>
       <div className='gap-6 flex flex-col'>
         <article>
           <header>

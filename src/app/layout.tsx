@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Fira_Code, Inter, Literata, Newsreader } from 'next/font/google'
+import { Fira_Code, Literata, Newsreader, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
 const literata = Literata({
@@ -12,8 +12,8 @@ const newsreader = Newsreader({
   subsets: ['latin'],
 })
 
-const inter = Inter({
-  variable: '--font-inter',
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-space-grotesk',
   subsets: ['latin'],
 })
 
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     <html
       lang='en'
       suppressHydrationWarning
-      className={`${literata.variable} ${newsreader.variable} ${inter.variable} ${firaCode.variable} h-full antialiased`}
+      className={`${literata.variable} ${newsreader.variable} ${spaceGrotesk.variable} ${firaCode.variable} h-full antialiased`}
     >
       <head>
         <script
