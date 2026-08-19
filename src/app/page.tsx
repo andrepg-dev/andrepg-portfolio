@@ -3,11 +3,11 @@ import { ThemeToggle } from './theme-toggle'
 
 export default function HomePage() {
   return (
-    <main className='mx-auto w-full max-w-2xl px-6 py-24 text-lg'>
+    <main className='mx-auto w-full max-w-2xl px-6 py-24 pb-0 text-lg'>
       <div className='flex items-center justify-between'>
         <h3 className='text-2xl flex flex-col'>
           <span className='font-medium'>Andre Ponce</span>
-          <p className='text-lg flex flex-col justify-end mb-1 text-muted'>
+          <p className='text-base flex flex-col justify-end mb-1 text-muted'>
             Software Developer & AI Agent Engineer
           </p>
         </h3>
