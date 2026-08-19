@@ -1,43 +1,35 @@
+import { getAllTags, getPostsByTag, getReadingTime } from '@/lib/posts'
 import Link from 'next/link'
-import {
-  getAllTags,
-  getPostsByTag,
-  formatDate,
-  getReadingTime,
-} from '@/lib/posts'
+import { ThemeToggle } from '../../../theme-toggle'
 
 export function generateStaticParams() {
   return getAllTags().map((tag) => ({ tag }))
 }
 
-export default async function TagPage({ params }: { params: Promise<{ tag: string }> }) {
+export default async function TagPage({
+  params,
+}: {
+  params: Promise<{ tag: string }>
+}) {
   const { tag } = await params
   const posts = getPostsByTag(tag)
   const tags = getAllTags()
 
   return (
     <main className='mx-auto w-full max-w-2xl px-6 py-24 text-lg'>
-      <div className='gap-6 flex flex-col'>
-        <div>
-          <p className='text-sm font-mono text-muted mb-1'>
-            <Link href='/blog' className='hover:text-accent transition-colors duration-300'>
-              blog
-            </Link>
-            {' / '}
-            {tag}
-          </p>
-          <h1 className='text-3xl font-bold mb-2'>Tag: {tag}</h1>
-          <p className='text-muted'>
-            {posts.length} {posts.length === 1 ? 'article' : 'articles'} tagged with &ldquo;{tag}&rdquo;
-          </p>
-        </div>
+      <div className='flex items-center justify-between'>
+        <h1 className='text-2xl font-medium'>Blog</h1>
+        <ThemeToggle />
+      </div>
 
+      <p className='text-muted text-base mt-1'>
+        Thoughts on code, AI agents, and books that shaped how I think.
+      </p>
+
+      <div className='gap-4 flex flex-col mt-4'>
         <nav className='flex flex-wrap items-center gap-2 text-sm font-mono'>
-          <Link
-            href='/blog'
-            className='px-1.5 rounded-sm bg-muted/70 text-white hover:bg-muted'
-          >
-            all
+          <Link href={'/blog'} className='hover:underline decoration-double'>
+            Categories
           </Link>
           {tags.map((t) => (
             <Link
@@ -59,9 +51,6 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
         <div className='flex flex-col gap-10'>
           {posts.map((post) => (
             <article key={post.slug}>
-              <time className='text-sm text-muted font-mono'>
-                {formatDate(post.date)}
-              </time>
               <h2 className='text-xl mt-1'>
                 <Link
                   href={`/blog/${post.slug}`}
@@ -82,7 +71,9 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
                     >
                       #{t}
                     </Link>
-                    {i < post.tags.length - 1 && <span className='ml-1'>·</span>}
+                    {i < post.tags.length - 1 && (
+                      <span className='ml-1'>·</span>
+                    )}
                   </span>
                 ))}
               </div>
@@ -97,10 +88,16 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
         <hr className='text-muted' />
 
         <nav className='flex gap-4 text-sm font-mono'>
-          <Link href='/blog' className='underline decoration-double hover:text-accent'>
+          <Link
+            href='/blog'
+            className='underline decoration-double hover:text-accent'
+          >
             ← all posts
           </Link>
-          <Link href='/' className='underline decoration-double hover:text-accent'>
+          <Link
+            href='/'
+            className='underline decoration-double hover:text-accent'
+          >
             home
           </Link>
         </nav>
