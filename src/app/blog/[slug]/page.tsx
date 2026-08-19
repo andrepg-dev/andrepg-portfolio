@@ -29,7 +29,7 @@ export default async function PostPage({
     <main className='mx-auto w-full max-w-2xl px-6 py-24 text-lg'>
       <div className='gap-6 flex flex-col'>
         <article>
-          <header>
+          <header className='relative'>
             <h1 className='text-4xl font-bold'>{post.title}</h1>
           </header>
 
@@ -41,11 +41,23 @@ export default async function PostPage({
             <span>Author: Andre Ponce</span>
           </div>
 
-          <div className='flex flex-col gap-6'>
+          <div className='flex flex-col gap-6 text-xl'>
             {paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
           </div>
+
+          <nav className='flex flex-wrap items-center gap-2 text-sm font-mono mt-6'>
+            {post.tags.map((tag) => (
+              <Link
+                key={tag}
+                href={`/blog/tags/${tag}`}
+                className='px-1.5 rounded-sm bg-muted/70 text-white hover:bg-muted'
+              >
+                {tag}
+              </Link>
+            ))}
+          </nav>
         </article>
 
         <hr className='text-muted' />

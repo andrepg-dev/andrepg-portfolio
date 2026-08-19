@@ -14,10 +14,7 @@ export default function BlogPage() {
             <Link href={'/'} className='hover:underline decoration-double'>
               Andre Ponce's{' '}
             </Link>
-            |{' '}
-            <Link href={'/blog'} className='hover:underline decoration-double'>
-              Blog
-            </Link>
+            | Blog
           </span>
           <p className='text-base flex flex-col justify-end mb-1 text-muted'>
             Thoughts on code, AI agents, and books that shaped how I think.
@@ -26,7 +23,7 @@ export default function BlogPage() {
         <ThemeToggle />
       </div>
 
-      <div className='gap-4 flex flex-col mt-4'>
+      <div className='gap-4 flex flex-col mt-4 text-xl'>
         <nav className='flex flex-wrap gap-2 text-sm font-mono'>
           Tags
           {tags.map((tag) => (
@@ -44,7 +41,7 @@ export default function BlogPage() {
         <div className='flex flex-col gap-10'>
           {posts.map((post) => (
             <article key={post.slug}>
-              <h2 className='text-xl mt-1'>
+              <h2 className='mt-1'>
                 <Link
                   href={`/blog/${post.slug}`}
                   className='hover:text-accent transition-colors duration-300'

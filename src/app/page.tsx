@@ -16,8 +16,8 @@ export default function HomePage() {
 
       <hr className='my-2 text-muted' />
 
-      <div className='gap-6 flex flex-col text-lg'>
-        <h4 className='text-lg'>
+      <div className='gap-6 flex flex-col text-xl'>
+        <h4>
           Hi, welcome to my blog! Here I write about the{' '}
           <Link
             href='/blog/tags/code'
@@ -64,15 +64,22 @@ export default function HomePage() {
 
         <p>
           These days I'm deep into AI agentic systems, LangChain, LangGraph,
-          LangSmith, powering Madoo AI under the hood. Observability, LLM evals,
-          deep agents with long-term memory, tools, MCP servers, the whole
-          stack.
+          LangSmith, powering{' '}
+          <Link
+            className='underline decoration-double hover:text-accent'
+            href={'https://madooai.com'}
+            target='_blank'
+          >
+            Madoo AI
+          </Link>{' '}
+          under the hood. Observability, LLM evals, deep agents with long-term
+          memory, tools, MCP servers, the whole stack.
         </p>
 
-        <ul className='list-disc space-y-2 pl-5 text-lg'>
+        <ul className='list-disc space-y-2 pl-5 text-xl'>
           <li>Born in Honduras, 2005</li>
           <li>
-            Previously founded @{' '}
+            Proud to have founded @{' '}
             <Link
               href='https://hopta.hn'
               className='underline decoration-double'
