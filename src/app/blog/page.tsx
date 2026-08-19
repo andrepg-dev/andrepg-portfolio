@@ -1,5 +1,6 @@
 import { getAllPosts, getAllTags, getReadingTime } from '@/lib/posts'
 import Link from 'next/link'
+import { ThemeToggle } from '../theme-toggle'
 
 export default function BlogPage() {
   const posts = getAllPosts()
@@ -7,15 +8,18 @@ export default function BlogPage() {
 
   return (
     <main className='mx-auto w-full max-w-2xl px-6 py-24'>
-      <div className='gap-4 flex flex-col'>
-        <div>
-          <h1 className='text-2xl font-medium'>Blog</h1>
-          <p className='text-muted text-lg'>
-            Thoughts on code, AI agents, and books that shaped how I think.
-          </p>
-        </div>
+      <div className='flex items-center justify-between'>
+        <h1 className='text-2xl font-medium'>Andre Ponce | Blog</h1>
+        <ThemeToggle />
+      </div>
 
+      <p className='text-muted text-base mt-1'>
+        Thoughts on code, AI agents, and books that shaped how I think.
+      </p>
+
+      <div className='gap-4 flex flex-col mt-4'>
         <nav className='flex flex-wrap gap-2 text-sm font-mono'>
+          Categories
           {tags.map((tag) => (
             <Link
               key={tag}
