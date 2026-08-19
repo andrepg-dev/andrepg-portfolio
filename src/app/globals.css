@@ -62,6 +62,7 @@
   --color-switch-track: var(--switch-track);
   --color-switch-border: var(--switch-border);
   --font-serif: var(--font-body);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-fira-code);
 }
 

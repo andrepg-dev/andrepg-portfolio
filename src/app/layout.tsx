@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Fira_Code, Literata, Newsreader } from 'next/font/google'
+import { Fira_Code, Inter, Literata, Newsreader } from 'next/font/google'
 import './globals.css'
 
 const literata = Literata({
@@ -9,6 +9,11 @@ const literata = Literata({
 
 const newsreader = Newsreader({
   variable: '--font-newsreader',
+  subsets: ['latin'],
+})
+
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
 })
 
@@ -27,11 +32,12 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     <html
       lang='en'
       suppressHydrationWarning
-      className={`${literata.variable} ${newsreader.variable} ${firaCode.variable} h-full antialiased`}
+      className={`${literata.variable} ${newsreader.variable} ${inter.variable} ${firaCode.variable} h-full antialiased`}
     >
       <head>
-        {/* Applies the stored theme before first paint, so there is no flash. */}
         <script
+          type={typeof window === 'undefined' ? 'text/javascript' : 'text/plain'}
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}`,
           }}
