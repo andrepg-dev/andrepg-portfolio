@@ -39,7 +39,9 @@ export function ThemeToggle() {
       aria-label='Toggle dark mode'
       onClick={toggle}
       suppressHydrationWarning
-      className='relative inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border border-switch-border bg-switch-track transition-colors duration-300 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
+      className={`
+        relative inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border border-switch-border bg-switch-track transition-colors duration-300 ease-in-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+      `}
     >
       <span
         suppressHydrationWarning

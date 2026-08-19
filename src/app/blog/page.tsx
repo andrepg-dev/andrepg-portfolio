@@ -9,17 +9,26 @@ export default function BlogPage() {
   return (
     <main className='mx-auto w-full max-w-2xl px-6 py-24'>
       <div className='flex items-center justify-between'>
-        <h1 className='text-2xl font-medium'>Andre Ponce | Blog</h1>
+        <h3 className='text-2xl flex flex-col'>
+          <span className='font-medium'>
+            <Link href={'/'} className='hover:underline decoration-double'>
+              Andre Ponce's{' '}
+            </Link>
+            |{' '}
+            <Link href={'/blog'} className='hover:underline decoration-double'>
+              Blog
+            </Link>
+          </span>
+          <p className='text-base flex flex-col justify-end mb-1 text-muted'>
+            Thoughts on code, AI agents, and books that shaped how I think.
+          </p>
+        </h3>
         <ThemeToggle />
       </div>
 
-      <p className='text-muted text-base mt-1'>
-        Thoughts on code, AI agents, and books that shaped how I think.
-      </p>
-
       <div className='gap-4 flex flex-col mt-4'>
         <nav className='flex flex-wrap gap-2 text-sm font-mono'>
-          Categories
+          Tags
           {tags.map((tag) => (
             <Link
               key={tag}

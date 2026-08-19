@@ -1,4 +1,9 @@
-import { formatDate, getAllPosts, getPostBySlug } from '@/lib/posts'
+import {
+  formatDate,
+  getAllPosts,
+  getPostBySlug,
+  getReadingTime,
+} from '@/lib/posts'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -25,23 +30,15 @@ export default async function PostPage({
       <div className='gap-6 flex flex-col'>
         <article>
           <header>
-            <h1 className='text-3xl font-bold'>{post.title}</h1>
+            <h1 className='text-4xl font-bold'>{post.title}</h1>
           </header>
 
           <div className='flex items-center gap-3 mt-2 text-sm font-mono text-muted mb-4'>
-            <span>{formatDate(post.date)}</span>
-            <span>·</span>
-            {post.tags.map((tag, i) => (
-              <span key={tag}>
-                <Link
-                  href={`/blog/tags/${tag}`}
-                  className='hover:text-accent transition-colors duration-300'
-                >
-                  #{tag}
-                </Link>
-                {i < post.tags.length - 1 && <span className='ml-1'>·</span>}
-              </span>
-            ))}
+            <span>Date: {formatDate(post.date)}</span>
+            <span>|</span>
+            <span>Estimated: {getReadingTime(post.content)}</span>
+            <span>|</span>
+            <span>Author: Andre Ponce</span>
           </div>
 
           <div className='flex flex-col gap-6'>
