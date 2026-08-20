@@ -106,7 +106,8 @@ samp {
   border-radius: 0.5rem;
   padding: 1rem;
   overflow-x: auto;
-  border: 1px solid var(--border);
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
 }
 
 @media (prefers-color-scheme: dark) {
