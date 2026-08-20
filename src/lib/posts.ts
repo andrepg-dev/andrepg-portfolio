@@ -13,7 +13,7 @@ const marked = new Marked(
       }
       return hljs.highlightAuto(code).value
     },
-  })
+  }),
 )
 
 export interface Post {
@@ -47,7 +47,10 @@ function extractTags(content: string): string[] {
 }
 
 function stripTags(content: string): string {
-  return content.replace(/#\w+/g, '').replace(/\n{3,}/g, '\n\n').trim()
+  return content
+    .replace(/#\w+/g, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
 }
 
 function convertObsidianEmbeds(content: string): string {
@@ -56,15 +59,13 @@ function convertObsidianEmbeds(content: string): string {
     (_, filename, width) => {
       const size = width ? ` width="${width}"` : ''
       return `<img src="/Notes/${filename}" alt="${filename}"${size} />`
-    }
+    },
   )
 }
 
 function convertObsidianLinks(content: string): string {
   return content.replace(/\[\[([^\]]+)\]\]/g, (_, noteName) => {
-    const slug = noteName
-      .toLowerCase()
-      .replace(/\s+/g, '-')
+    const slug = noteName.toLowerCase().replace(/\s+/g, '-')
     return `[${noteName}](/blog/${slug})`
   })
 }
@@ -78,16 +79,15 @@ function getAllMarkdownFiles(): Post[] {
     const filePath = path.join(NOTES_DIR, file)
     const raw = fs.readFileSync(filePath, 'utf-8')
     const stat = fs.statSync(filePath)
-    const slug = file
-      .replace(/\.md$/, '')
-      .toLowerCase()
-      .replace(/\s+/g, '-')
+    const slug = file.replace(/\.md$/, '').toLowerCase().replace(/\s+/g, '-')
     const title = slug
       .replace(/[-_]/g, ' ')
       .replace(/\b\w/g, (c) => c.toUpperCase())
     const tags = extractTags(raw)
     const cleanContent = stripTags(raw)
-    const processedContent = convertObsidianLinks(convertObsidianEmbeds(cleanContent))
+    const processedContent = convertObsidianLinks(
+      convertObsidianEmbeds(cleanContent),
+    )
 
     return {
       slug,
@@ -104,7 +104,7 @@ function getAllMarkdownFiles(): Post[] {
 
 export function getAllPosts(): Post[] {
   return getAllMarkdownFiles().sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   )
 }
 

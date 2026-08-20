@@ -22,7 +22,7 @@ This is the best part of the code
 
 
 ```js
-const NOTES_DIR = path.join(process.cwd(), 'public/Notes')
+const NOTES_DIR = path.join(process.cwd(), 'public/Notes'); console.log("This is a hugely code")
 
 function readingTime(content: string): string {
 	const words = content.trim().split(/\s+/).length
@@ -30,7 +30,6 @@ function readingTime(content: string): string {
 	return `${minutes} min read`
 }
 
-  
 export function getReadingTime(content: string): string {
 	return readingTime(content)
 }
