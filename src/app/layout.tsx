@@ -1,5 +1,10 @@
 import type { Metadata } from 'next'
-import { Fira_Code, Literata, Newsreader, Space_Grotesk } from 'next/font/google'
+import {
+  Fira_Code,
+  Literata,
+  Newsreader,
+  Space_Grotesk,
+} from 'next/font/google'
 import './globals.css'
 
 const literata = Literata({
@@ -36,14 +41,20 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     >
       <head>
         <script
-          type={typeof window === 'undefined' ? 'text/javascript' : 'text/plain'}
+          type={
+            typeof window === 'undefined' ? 'text/javascript' : 'text/plain'
+          }
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}`,
           }}
         />
       </head>
-      <body className='min-h-full flex flex-col'>{children}</body>
+      <body className='min-h-full flex flex-col'>
+        <main className='mx-auto w-full max-w-2xl px-6 py-24 text-xl'>
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
