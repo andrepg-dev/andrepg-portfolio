@@ -3,7 +3,7 @@ import { ThemeToggle } from './theme-toggle'
 
 export default function HomePage() {
   return (
-    <main className='mx-auto w-full max-w-2xl px-6 py-24 pb-0 text-lg'>
+    <>
       <div className='flex items-center justify-between'>
         <h3 className='text-2xl flex flex-col'>
           <span className='font-medium'>Andre Ponce</span>
@@ -16,7 +16,7 @@ export default function HomePage() {
 
       <hr className='my-2 text-muted' />
 
-      <div className='gap-6 flex flex-col text-xl'>
+      <div className='gap-6 flex flex-col text-xl mt-4'>
         <h4>
           Hi, welcome to my blog! Here I write about the{' '}
           <Link
@@ -121,7 +121,7 @@ export default function HomePage() {
           <li>Also into running and startups</li>
         </ul>
 
-        <div className='flex gap-4'>
+        <footer className='flex gap-4'>
           <Link href={'/blog/'} className='underline decoration-double'>
             Blog
           </Link>
@@ -156,8 +156,8 @@ export default function HomePage() {
           >
             Email Contact
           </Link>
-        </div>
+        </footer>
       </div>
-    </main>
+    </>
   )
 }
