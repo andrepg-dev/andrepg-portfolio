@@ -8,7 +8,10 @@ export default function BlogPage() {
 
   return (
     <main>
-      <Header description='Thoughts on code, AI agents, and books that shaped how I think.' section='Blog' />
+      <Header
+        description='Thoughts on code, AI agents, and books that shaped how I think.'
+        section='Blog'
+      />
 
       <article className='gap-4 flex flex-col my-4 text-xl'>
         <nav className='flex flex-wrap gap-2 text-sm font-mono'>
@@ -27,7 +30,7 @@ export default function BlogPage() {
         <hr className='text-muted' />
         <div className='flex flex-col gap-10'>
           {posts.map((post) => (
-            <article key={post.slug}>
+            <article key={post.slug} className='bg-red-50'>
               <h2 className='mt-1'>
                 <Link
                   href={`/blog/${post.slug}`}
