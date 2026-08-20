@@ -7,7 +7,7 @@ export default function CertificationsPage() {
       <Header description='Software Developer & AI Agent Engineer' />
       <hr className='my-2 text-muted' />
 
-      <div className='mt-6 mb-4'>Hola</div>
+      <div className='my-4'>Hola</div>
       <Footer />
     </>
   )

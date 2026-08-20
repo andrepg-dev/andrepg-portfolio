@@ -4,10 +4,13 @@ import Header from '@/components/global/header'
 export default function ProjectsPage() {
   return (
     <>
-      <Header description='Software Developer & AI Agent Engineer' />
+      <Header
+        description='Software Developer & AI Agent Engineer'
+        section='Projects'
+      />
       <hr className='my-2 text-muted' />
 
-      <article className='mt-6 mb-4'>Hi, how are you</article>
+      <article className='my-4'>Hi, how are you</article>
       <Footer />
     </>
   )
