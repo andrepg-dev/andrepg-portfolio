@@ -9,7 +9,14 @@ Obsidian has a hugely community, in fact, this is the best notes editor, simple,
 
 After that, comes the easiest part of everything.
 
-![[Pasted image 20260820151453.png|502]]
+![[Pasted image 20260820151453.png|217]]
 
 Do you like to write notes? Do you like to write notes that are easy to read and understand? Do you like to write notes that are easy to find and organize? If you answered yes to any of these questions, then Obsidian is the perfect tool for you.
+
+```python
+if phone == "+504 9234-2344":
+	print("code")
+```
+
+This is the best part of the code
 

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@import "highlight.js/styles/github-dark.css";
 
 :root {
   color-scheme: light dark;
@@ -99,4 +100,20 @@ samp {
   font-feature-settings:
     "calt" 1,
     "liga" 1;
+}
+
+.prose pre {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.prose code {
+  font-size: 0.9em;
+}
+
+.prose :not(pre) > code {
+  background: var(--surface);
+  padding: 0.15em 0.3em;
+  border-radius: 0.25rem;
 }
