@@ -36,6 +36,16 @@ function stripTags(content: string): string {
   return content.replace(/#\w+/g, '').replace(/\n{3,}/g, '\n\n').trim()
 }
 
+function convertObsidianEmbeds(content: string): string {
+  return content.replace(
+    /!\[\[([^\]|]+)(?:\|(\d+))?\]\]/g,
+    (_, filename, width) => {
+      const size = width ? ` width="${width}"` : ''
+      return `<img src="/Notes/${filename}" alt="${filename}"${size} />`
+    }
+  )
+}
+
 function getAllMarkdownFiles(): Post[] {
   if (!fs.existsSync(NOTES_DIR)) return []
 
@@ -54,6 +64,7 @@ function getAllMarkdownFiles(): Post[] {
       .replace(/\b\w/g, (c) => c.toUpperCase())
     const tags = extractTags(raw)
     const cleanContent = stripTags(raw)
+    const processedContent = convertObsidianEmbeds(cleanContent)
 
     return {
       slug,
@@ -62,8 +73,8 @@ function getAllMarkdownFiles(): Post[] {
       date: stat.mtime.toISOString(),
       tags,
       excerpt: cleanContent.slice(0, 160),
-      content: cleanContent,
-      html: marked(cleanContent) as string,
+      content: processedContent,
+      html: marked(processedContent) as string,
     }
   })
 }
