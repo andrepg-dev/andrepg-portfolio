@@ -45,7 +45,10 @@ function getAllMarkdownFiles(): Post[] {
     const filePath = path.join(NOTES_DIR, file)
     const raw = fs.readFileSync(filePath, 'utf-8')
     const stat = fs.statSync(filePath)
-    const slug = file.replace(/\.md$/, '')
+    const slug = file
+      .replace(/\.md$/, '')
+      .toLowerCase()
+      .replace(/\s+/g, '-')
     const title = slug
       .replace(/[-_]/g, ' ')
       .replace(/\b\w/g, (c) => c.toUpperCase())
