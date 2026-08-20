@@ -111,14 +111,14 @@ samp {
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .prose pre {
-    background: #181b23;
-    border-color: #252830;
+    background: #0d1117;
+    border-color: #30363d;
   }
 }
 
 :root[data-theme="dark"] .prose pre {
-  background: #181b23;
-  border-color: #252830;
+  background: #0d1117;
+  border-color: #30363d;
 }
 
 .prose code {
