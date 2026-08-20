@@ -61,7 +61,7 @@ export default async function PostPage({
           </div>
 
           <div
-            className='prose prose-invert max-w-none text-xl'
+            className='prose max-w-none text-xl'
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
 

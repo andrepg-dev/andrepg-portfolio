@@ -9,7 +9,7 @@ Obsidian has a hugely community, in fact, this is the best notes editor, simple,
 
 After that, comes the easiest part of everything.
 
-![[Pasted image 20260820151453.png|217]]
+![[Pasted image 20260820151453.png|473]]
 
 Do you like to write notes? Do you like to write notes that are easy to read and understand? Do you like to write notes that are easy to find and organize? If you answered yes to any of these questions, then Obsidian is the perfect tool for you.
 
@@ -22,7 +22,7 @@ This is the best part of the code
 
 
 ```js
-const NOTES_DIR = path.join(process.cwd(), 'public/Notes'); console.log("This is a hugely code")
+const NOTES_DIR = path.join(process.cwd(), 'public/Notes');
 
 function readingTime(content: string): string {
 	const words = content.trim().split(/\s+/).length
