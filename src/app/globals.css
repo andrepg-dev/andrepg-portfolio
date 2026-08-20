@@ -147,60 +147,93 @@ samp {
   --tw-prose-td-borders: var(--border);
 }
 
+/* Full github-dark theme scoped to dark mode */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .hljs {
-    background: #0d1117;
-    color: #c9d1d9;
-  }
-  :root:not([data-theme="light"]) .hljs-keyword,
-  :root:not([data-theme="light"]) .hljs-built_in,
-  :root:not([data-theme="light"]) .hljs-type {
-    color: #ff7b72;
-  }
-  :root:not([data-theme="light"]) .hljs-string,
-  :root:not([data-theme="light"]) .hljs-attr {
-    color: #a5d6ff;
-  }
-  :root:not([data-theme="light"]) .hljs-comment {
-    color: #8b949e;
-  }
-  :root:not([data-theme="light"]) .hljs-number,
-  :root:not([data-theme="light"]) .hljs-literal {
-    color: #79c0ff;
-  }
-  :root:not([data-theme="light"]) .hljs-function,
-  :root:not([data-theme="light"]) .hljs-title {
-    color: #d2a8ff;
-  }
-  :root:not([data-theme="light"]) .hljs-variable {
-    color: #ffa657;
+  :root:not([data-theme="light"]) {
+    .hljs,
+    .hljs-subst { color: #c9d1d9; background: #0d1117; }
+    .hljs-doctag,
+    .hljs-keyword,
+    .hljs-meta .hljs-keyword,
+    .hljs-template-tag,
+    .hljs-template-variable,
+    .hljs-type,
+    .hljs-variable.language_ { color: #ff7b72; }
+    .hljs-title,
+    .hljs-title.class_,
+    .hljs-title.class_.inherited__,
+    .hljs-title.function_ { color: #d2a8ff; }
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-literal,
+    .hljs-meta,
+    .hljs-number,
+    .hljs-operator,
+    .hljs-variable,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-id { color: #79c0ff; }
+    .hljs-regexp,
+    .hljs-string,
+    .hljs-meta .hljs-string { color: #a5d6ff; }
+    .hljs-built_in,
+    .hljs-symbol { color: #ffa657; }
+    .hljs-comment,
+    .hljs-code,
+    .hljs-formula { color: #8b949e; }
+    .hljs-name,
+    .hljs-quote,
+    .hljs-selector-tag,
+    .hljs-selector-pseudo { color: #7ee787; }
+    .hljs-section { color: #1f6feb; font-weight: bold; }
+    .hljs-bullet { color: #f2cc60; }
+    .hljs-emphasis { color: #c9d1d9; font-style: italic; }
+    .hljs-strong { color: #c9d1d9; font-weight: bold; }
+    .hljs-addition { color: #aff5b4; background-color: #033a16; }
+    .hljs-deletion { color: #ffdcd7; background-color: #67060c; }
   }
 }
 
-:root[data-theme="dark"] .hljs {
-  background: #0d1117;
-  color: #c9d1d9;
-}
-:root[data-theme="dark"] .hljs-keyword,
-:root[data-theme="dark"] .hljs-built_in,
-:root[data-theme="dark"] .hljs-type {
-  color: #ff7b72;
-}
-:root[data-theme="dark"] .hljs-string,
-:root[data-theme="dark"] .hljs-attr {
-  color: #a5d6ff;
-}
-:root[data-theme="dark"] .hljs-comment {
-  color: #8b949e;
-}
-:root[data-theme="dark"] .hljs-number,
-:root[data-theme="dark"] .hljs-literal {
-  color: #79c0ff;
-}
-:root[data-theme="dark"] .hljs-function,
-:root[data-theme="dark"] .hljs-title {
-  color: #d2a8ff;
-}
-:root[data-theme="dark"] .hljs-variable {
-  color: #ffa657;
+:root[data-theme="dark"] {
+  .hljs,
+  .hljs-subst { color: #c9d1d9; background: #0d1117; }
+  .hljs-doctag,
+  .hljs-keyword,
+  .hljs-meta .hljs-keyword,
+  .hljs-template-tag,
+  .hljs-template-variable,
+  .hljs-type,
+  .hljs-variable.language_ { color: #ff7b72; }
+  .hljs-title,
+  .hljs-title.class_,
+  .hljs-title.class_.inherited__,
+  .hljs-title.function_ { color: #d2a8ff; }
+  .hljs-attr,
+  .hljs-attribute,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-operator,
+  .hljs-variable,
+  .hljs-selector-attr,
+  .hljs-selector-class,
+  .hljs-selector-id { color: #79c0ff; }
+  .hljs-regexp,
+  .hljs-string,
+  .hljs-meta .hljs-string { color: #a5d6ff; }
+  .hljs-built_in,
+  .hljs-symbol { color: #ffa657; }
+  .hljs-comment,
+  .hljs-code,
+  .hljs-formula { color: #8b949e; }
+  .hljs-name,
+  .hljs-quote,
+  .hljs-selector-tag,
+  .hljs-selector-pseudo { color: #7ee787; }
+  .hljs-section { color: #1f6feb; font-weight: bold; }
+  .hljs-bullet { color: #f2cc60; }
+  .hljs-emphasis { color: #c9d1d9; font-style: italic; }
+  .hljs-strong { color: #c9d1d9; font-weight: bold; }
+  .hljs-addition { color: #aff5b4; background-color: #033a16; }
+  .hljs-deletion { color: #ffdcd7; background-color: #67060c; }
 }
