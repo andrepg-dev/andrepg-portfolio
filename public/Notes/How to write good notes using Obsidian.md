@@ -9,7 +9,7 @@ Obsidian has a hugely community, in fact, this is the best notes editor, simple,
 
 After that, comes the easiest part of everything.
 
-![[Pasted image 20260820154333.png|382]]
+![[image.png|382]]
 
 Do you like to write notes? Do you like to write notes that are easy to read and understand? Do you like to write notes that are easy to find and organize? If you answered yes to any of these questions, then Obsidian is the perfect tool for you.
 
@@ -37,6 +37,14 @@ export function getReadingTime(content: string): string {
 
 Look at that, is huge.
 
+### Math support
+You can also write math using LaTeX syntax. Inline math like $E = mc^2$ works, and display math too:
+
+$$
+\int_{-3}^{3} e^{-x^2} \, dy = \sqrt{\pi}
+$$
+
 [[Como tomar notas]]
 
 Dicho eso, puedes hacer algo diferente, puedes hacer algo que te ayude a pensar mejor, puedes hacer algo que te ayude a organizar tus ideas, puedes hacer algo que te ayude a recordar lo que has aprendido.
+

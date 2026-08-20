@@ -3,6 +3,7 @@ import path from 'path'
 import { Marked } from 'marked'
 import hljs from 'highlight.js'
 import { markedHighlight } from 'marked-highlight'
+import katex from 'katex'
 
 const marked = new Marked(
   markedHighlight({
@@ -70,6 +71,25 @@ function convertObsidianLinks(content: string): string {
   })
 }
 
+function convertLatex(content: string): string {
+  let result = content
+  result = result.replace(/\$\$([\s\S]+?)\$\$/g, (_, tex) => {
+    try {
+      return katex.renderToString(tex.trim(), { displayMode: true, throwOnError: false })
+    } catch {
+      return `<pre>${tex}</pre>`
+    }
+  })
+  result = result.replace(/\$([^\n$]+?)\$/g, (_, tex) => {
+    try {
+      return katex.renderToString(tex.trim(), { displayMode: false, throwOnError: false })
+    } catch {
+      return `<code>${tex}</code>`
+    }
+  })
+  return result
+}
+
 function getAllMarkdownFiles(): Post[] {
   if (!fs.existsSync(NOTES_DIR)) return []
 
@@ -85,8 +105,8 @@ function getAllMarkdownFiles(): Post[] {
       .replace(/\b\w/g, (c) => c.toUpperCase())
     const tags = extractTags(raw)
     const cleanContent = stripTags(raw)
-    const processedContent = convertObsidianLinks(
-      convertObsidianEmbeds(cleanContent),
+    const processedContent = convertLatex(
+      convertObsidianLinks(convertObsidianEmbeds(cleanContent)),
     )
 
     return {

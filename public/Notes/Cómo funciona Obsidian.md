@@ -1,3 +1,0 @@
-#firsttag #code #art
-
-Obsidian es un tremendo editor, claro que sí
