@@ -106,6 +106,19 @@ samp {
   border-radius: 0.5rem;
   padding: 1rem;
   overflow-x: auto;
+  border: 1px solid var(--border);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .prose pre {
+    background: #f6f8fa;
+    border-color: #e1e4e8;
+  }
+}
+
+:root[data-theme="light"] .prose pre {
+  background: #f6f8fa;
+  border-color: #e1e4e8;
 }
 
 .prose code {
