@@ -60,6 +60,15 @@ function convertObsidianEmbeds(content: string): string {
   )
 }
 
+function convertObsidianLinks(content: string): string {
+  return content.replace(/\[\[([^\]]+)\]\]/g, (_, noteName) => {
+    const slug = noteName
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+    return `[${noteName}](/blog/${slug})`
+  })
+}
+
 function getAllMarkdownFiles(): Post[] {
   if (!fs.existsSync(NOTES_DIR)) return []
 
@@ -78,7 +87,7 @@ function getAllMarkdownFiles(): Post[] {
       .replace(/\b\w/g, (c) => c.toUpperCase())
     const tags = extractTags(raw)
     const cleanContent = stripTags(raw)
-    const processedContent = convertObsidianEmbeds(cleanContent)
+    const processedContent = convertObsidianLinks(convertObsidianEmbeds(cleanContent))
 
     return {
       slug,

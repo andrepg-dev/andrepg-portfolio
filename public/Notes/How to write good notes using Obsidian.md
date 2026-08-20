@@ -20,3 +20,22 @@ if phone == "+504 9234-2344":
 
 This is the best part of the code
 
+
+```js
+const NOTES_DIR = path.join(process.cwd(), 'public/Notes')
+
+function readingTime(content: string): string {
+	const words = content.trim().split(/\s+/).length
+	const minutes = Math.max(1, Math.round(words / 200))
+	return `${minutes} min read`
+}
+
+  
+export function getReadingTime(content: string): string {
+	return readingTime(content)
+}
+```
+
+Look at that, is huge.
+
+[[Como tomar notas]]
