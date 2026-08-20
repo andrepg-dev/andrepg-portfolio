@@ -1,10 +1,12 @@
 export interface Post {
   slug: string
   title: string
+  author: string
   date: string
   tags: string[]
   excerpt: string
   content: string
+  image?: string
 }
 
 function readingTime(content: string): string {
@@ -48,10 +50,12 @@ const posts: Post[] = [
   {
     slug: 'building-ai-agents-with-langgraph',
     title: 'Building AI Agents with LangGraph',
+    author: 'André Ponce',
     date: '2026-08-15',
     tags: ['ai-agent', 'langchain'],
     excerpt:
       'A deep dive into building persistent, tool-using AI agents with LangGraph — the framework that finally makes agentic workflows manageable.',
+    image: '/images/blog/ai-agents.jpg',
     content: `When I first started building AI agents, the biggest pain point wasn't the LLM calls themselves — it was managing state. Every agent needs to remember what it did five steps ago, which tools it already called, and what the user actually asked for. LangGraph solves this in a way that finally feels right.
 
 The core idea is simple: model your agent as a graph. Nodes are functions that do work — call an LLM, invoke a tool, transform data. Edges define the flow between them. But the magic is in the state. LangGraph gives you a typed state object that persists across every node execution, so your agent always has full context.
@@ -69,10 +73,12 @@ If you're building anything more complex than a simple chatbot, I'd strongly rec
   {
     slug: 'why-i-switched-to-nextjs-16',
     title: 'Why I Switched to Next.js 16',
+    author: 'André Ponce',
     date: '2026-08-02',
     tags: ['code', 'nextjs'],
     excerpt:
       'The breaking changes in Next.js 16 that actually matter, and why the upgrade was worth it for this portfolio.',
+    image: '/images/blog/nextjs.jpg',
     content: `Next.js 16 has breaking changes. That's not news. But after spending a weekend migrating this portfolio, I want to share what actually changed, what matters, and why I think the direction is right.
 
 The biggest shift is how types work with routes. The old manual type definitions are gone — Next.js 16 gives you LayoutProps<'/'> and similar helpers that infer types from your actual route structure. It's a small change that eliminates a whole class of bugs.
@@ -92,10 +98,12 @@ Overall, Next.js 16 feels like the version where the App Router stopped being "n
   {
     slug: 'how-i-use-mcp-servers-in-production',
     title: 'How I Use MCP Servers in Production',
+    author: 'André Ponce',
     date: '2026-07-20',
     tags: ['ai-agent', 'code'],
     excerpt:
       'Model Context Protocol servers have changed how I connect AI agents to external tools. Here is what I have learned shipping them.',
+    image: '/images/blog/mcp-servers.jpg',
     content: `MCP — Model Context Protocol — is one of those ideas that sounds simple but changes everything once you actually use it. The premise: give AI agents a standardized way to discover and call external tools, without tight coupling to any specific LLM provider.
 
 I started using MCP servers at Madoo AI, where we needed agents to interact with databases, APIs, and internal services. Before MCP, every tool integration was a one-off: custom function calling schemas, provider-specific prompts, brittle error handling. MCP replaced all of that with a single protocol.
@@ -115,10 +123,12 @@ If you're building agentic systems, MCP is worth adopting now. The ecosystem is 
   {
     slug: 'atomic-habits-for-developers',
     title: 'Atomic Habits: Lessons That Changed How I Code',
+    author: 'André Ponce',
     date: '2026-07-05',
     tags: ['books'],
     excerpt:
       'James Clear\'s Atomic Habits has nothing to do with programming. And yet, it is one of the most practical books I have read as a developer.',
+    image: '/images/blog/atomic-habits.jpg',
     content: `I read Atomic Habits expecting a self-help book. What I got was a framework that fundamentally changed how I approach building software — not the code itself, but the process of becoming a better engineer.
 
 The core thesis is simple: small habits, compounded over time, produce remarkable results. Clear calls them "atomic" — tiny units that seem insignificant on their own but accumulate into something powerful. The analogy to software development is immediate.
@@ -138,10 +148,12 @@ I keep a copy of this book on my desk. Not because I forget the lessons, but bec
   {
     slug: 'from-sololearn-to-shipped-products',
     title: 'From SoloLearn to Shipped Products',
+    author: 'André Ponce',
     date: '2026-06-18',
     tags: ['code'],
     excerpt:
       'How a mobile coding app at 14 led to founding startups by 19 — a non-linear path through self-taught web development.',
+    image: '/images/blog/coding-journey.jpg',
     content: `I didn't learn to code in a classroom. I learned on a phone, in a browser, through SoloLearn's bite-sized lessons. I was 14, and the idea that you could write text and make a computer do things felt like magic.
 
 SoloLearn gave me the basics: variables, loops, functions. But more importantly, it gave me confidence. I wrote my first Python script on a bus ride home from school. It didn't do anything useful — it just printed numbers in a pattern. But I'd made something from nothing, and that feeling never went away.

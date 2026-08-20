@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const PersonaLink = () => {
   return (
-    <Link href={'/'} className='hover:underline decoration-double'>
+    <Link href={'/'} className='hover:underline hover:decoration-double'>
       Andre Ponce's{' '}
     </Link>
   )

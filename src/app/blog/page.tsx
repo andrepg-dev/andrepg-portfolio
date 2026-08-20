@@ -29,7 +29,7 @@ export default function BlogPage() {
         </nav>
 
         <hr className='text-muted' />
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-8'>
           {posts.map((post, idx) => (
             <CardBlog post={post} key={idx} />
           ))}

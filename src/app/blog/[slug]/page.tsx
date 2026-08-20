@@ -4,6 +4,7 @@ import {
   getPostBySlug,
   getReadingTime,
 } from '@/lib/posts'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -29,8 +30,20 @@ export default async function PostPage({
     <>
       <div className='gap-6 flex flex-col'>
         <article>
+          {post.image && (
+            <div className='relative w-full h-64 mb-6 rounded-xl overflow-hidden'>
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className='object-cover'
+                priority
+              />
+            </div>
+          )}
+
           <header className='relative'>
-            <h1 className='text-4xl font-bold'>{post.title}</h1>
+            <h1 className='text-4xl font- text-accent'>{post.title}</h1>
           </header>
 
           <div className='flex items-center gap-3 mt-2 text-sm font-mono text-muted mb-4'>
@@ -38,7 +51,15 @@ export default async function PostPage({
             <span>|</span>
             <span>Estimated: {getReadingTime(post.content)}</span>
             <span>|</span>
-            <span>Author: Andre Ponce</span>
+            <span>
+              Author:{' '}
+              <Link
+                href={'/'}
+                className='underline decoration-double hover:text-accent'
+              >
+                Andre Ponce
+              </Link>
+            </span>
           </div>
 
           <div className='flex flex-col gap-6 text-xl'>
@@ -52,7 +73,7 @@ export default async function PostPage({
               <Link
                 key={tag}
                 href={`/blog/tags/${tag}`}
-                className='px-1.5 rounded-sm bg-muted/70 text-white hover:bg-muted'
+                className='px-1.5 bg-black/70 text-white hover:bg-muted'
               >
                 {tag}
               </Link>
@@ -67,7 +88,7 @@ export default async function PostPage({
             href='/blog'
             className='underline decoration-double hover:text-accent'
           >
-            ← all posts
+            ← back to the blog
           </Link>
           <Link
             href='/'
