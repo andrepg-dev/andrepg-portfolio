@@ -27,13 +27,8 @@ export default function CardBlog({
         <span>{getReadingTime(post.content)}</span>
         <span>·</span>
         {post.tags.map((tag, i) => (
-          <span key={tag}>
-            <Link
-              href={`/blog/tags/${tag}`}
-              className='hover:text-accent transition-colors'
-            >
-              #{tag}
-            </Link>
+          <span key={tag} className='hover:text-accent transition-colors'>
+            #{tag}
             {i < post.tags.length - 1 && <span className='ml-1'>·</span>}
           </span>
         ))}

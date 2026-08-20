@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import {
   Fira_Code,
   Literata,
@@ -39,18 +40,14 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       suppressHydrationWarning
       className={`${literata.variable} ${newsreader.variable} ${spaceGrotesk.variable} ${firaCode.variable} h-full antialiased`}
     >
-      <head>
-        <script
-          type={
-            typeof window === 'undefined' ? 'text/javascript' : 'text/plain'
-          }
-          suppressHydrationWarning
+      <body className='min-h-full flex flex-col'>
+        <Script
+          id='theme-init'
+          strategy='beforeInteractive'
           dangerouslySetInnerHTML={{
             __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}`,
           }}
         />
-      </head>
-      <body className='min-h-full flex flex-col'>
         <main className='mx-auto w-full max-w-2xl px-6 py-24 text-xl'>
           {children}
         </main>
