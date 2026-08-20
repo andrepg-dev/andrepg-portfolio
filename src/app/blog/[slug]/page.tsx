@@ -24,8 +24,6 @@ export default async function PostPage({
     notFound()
   }
 
-  const paragraphs = post.content.split('\n\n')
-
   return (
     <>
       <div className='gap-6 flex flex-col'>
@@ -62,11 +60,10 @@ export default async function PostPage({
             </span>
           </div>
 
-          <div className='flex flex-col gap-6 text-xl'>
-            {paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
+          <div
+            className='prose prose-invert max-w-none text-xl'
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
 
           <nav className='flex flex-wrap items-center gap-2 text-sm font-mono mt-6'>
             {post.tags.map((tag) => (

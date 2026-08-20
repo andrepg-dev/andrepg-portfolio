@@ -1,0 +1,1 @@
+Obsidian es un tremendo editor, claro que sí

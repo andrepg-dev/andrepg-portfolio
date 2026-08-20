@@ -1,6 +1,6 @@
 import CardBlog from '@/components/blog/card-blog'
 import Header from '@/components/global/header'
-import { getAllPosts, getAllTags, getReadingTime } from '@/lib/posts'
+import { getAllPosts, getAllTags } from '@/lib/posts'
 import Link from 'next/link'
 
 export default function BlogPage() {
