@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
 import { marked } from 'marked'
 
 export interface Post {
@@ -15,7 +14,7 @@ export interface Post {
   image?: string
 }
 
-const CONTENT_DIR = path.join(process.cwd(), 'content/blog')
+const NOTES_DIR = path.join(process.cwd(), 'public/Notes')
 
 function readingTime(content: string): string {
   const words = content.trim().split(/\s+/).length
@@ -27,26 +26,41 @@ export function getReadingTime(content: string): string {
   return readingTime(content)
 }
 
-function getAllMarkdownFiles(): Post[] {
-  if (!fs.existsSync(CONTENT_DIR)) return []
+function extractTags(content: string): string[] {
+  const matches = content.match(/#([\w-]+)/g)
+  if (!matches) return []
+  return [...new Set(matches.map((t) => t.slice(1)))]
+}
 
-  const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.md'))
+function stripTags(content: string): string {
+  return content.replace(/#\w+/g, '').replace(/\n{3,}/g, '\n\n').trim()
+}
+
+function getAllMarkdownFiles(): Post[] {
+  if (!fs.existsSync(NOTES_DIR)) return []
+
+  const files = fs.readdirSync(NOTES_DIR).filter((f) => f.endsWith('.md'))
 
   return files.map((file) => {
-    const raw = fs.readFileSync(path.join(CONTENT_DIR, file), 'utf-8')
-    const { data, content } = matter(raw)
+    const filePath = path.join(NOTES_DIR, file)
+    const raw = fs.readFileSync(filePath, 'utf-8')
+    const stat = fs.statSync(filePath)
     const slug = file.replace(/\.md$/, '')
+    const title = slug
+      .replace(/[-_]/g, ' ')
+      .replace(/\b\w/g, (c) => c.toUpperCase())
+    const tags = extractTags(raw)
+    const cleanContent = stripTags(raw)
 
     return {
       slug,
-      title: data.title ?? slug,
-      author: data.author ?? 'André Ponce',
-      date: data.date ?? new Date().toISOString(),
-      tags: data.tags ?? [],
-      excerpt: data.excerpt ?? content.slice(0, 160),
-      content,
-      html: marked(content) as string,
-      image: data.image,
+      title,
+      author: 'André Ponce',
+      date: stat.mtime.toISOString(),
+      tags,
+      excerpt: cleanContent.slice(0, 160),
+      content: cleanContent,
+      html: marked(cleanContent) as string,
     }
   })
 }
