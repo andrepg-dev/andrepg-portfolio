@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ThemeToggle } from './theme-toggle'
+import Footer from '@/components/global/footer'
 
 export default function HomePage() {
   return (
@@ -79,7 +80,7 @@ export default function HomePage() {
         <ul className='list-disc space-y-2 pl-5 text-xl'>
           <li>Born in Honduras, 2005</li>
           <li>
-            Proud to have founded @{' '}
+            Founded @{' '}
             <Link
               href='https://hopta.hn'
               className='underline decoration-double'
@@ -118,45 +119,10 @@ export default function HomePage() {
               CEUTEC
             </Link>
           </li>
-          <li>Also into running and startups</li>
+          <li>Building startups between runs</li>
         </ul>
 
-        <footer className='flex gap-4'>
-          <Link href={'/blog/'} className='underline decoration-double'>
-            Blog
-          </Link>
-          <Link href={'/projects'} className='underline decoration-double'>
-            Projects
-          </Link>
-          <Link
-            href={'/certifications'}
-            className='underline decoration-double'
-          >
-            Certifications
-          </Link>
-          <Link
-            href={'https://x.com/iandrepg'}
-            className='underline decoration-double'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            X
-          </Link>
-          <Link
-            href={'https://www.linkedin.com/in/andreponceg'}
-            className='underline decoration-double'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            LinkedIn
-          </Link>
-          <Link
-            href={'mailto:asponceg@gmail.com'}
-            className='underline decoration-double'
-          >
-            Email Contact
-          </Link>
-        </footer>
+        <Footer />
       </div>
     </>
   )
