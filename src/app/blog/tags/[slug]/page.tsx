@@ -1,4 +1,5 @@
 import CardBlog from '@/components/blog/card-blog'
+import Footer from '@/components/global/footer'
 import Header from '@/components/global/header'
 import { getAllTags, getPostsByTag } from '@/lib/posts'
 import Link from 'next/link'
@@ -17,7 +18,7 @@ export default async function TagPage({
   const tags = getAllTags()
 
   return (
-    <main>
+    <>
       <Header
         description='Thoughts on code, AI agents, and books that shaped how I think.'
         section={
@@ -26,55 +27,38 @@ export default async function TagPage({
           </Link>
         }
       />
-      <div className='gap-4 flex flex-col my-4'>
-        <nav className='flex flex-wrap items-center gap-2 text-sm font-mono'>
-          <Link href={'/blog'} className='hover:underline decoration-double'>
-            Tags
+      <nav className='flex flex-wrap items-center gap-2 text-sm font-mono my-4'>
+        <Link href={'/blog'} className='hover:underline decoration-double'>
+          Tags
+        </Link>
+        {tags.map((t) => (
+          <Link
+            key={t}
+            href={`/blog/tags/${t}`}
+            className={`px-1.5 rounded-sm ${
+              t === tag
+                ? 'bg-accent text-white'
+                : 'bg-muted/70 text-white hover:bg-muted'
+            }`}
+          >
+            {t}
           </Link>
-          {tags.map((t) => (
-            <Link
-              key={t}
-              href={`/blog/tags/${t}`}
-              className={`px-1.5 rounded-sm ${
-                t === tag
-                  ? 'bg-accent text-white'
-                  : 'bg-muted/70 text-white hover:bg-muted'
-              }`}
-            >
-              {t}
-            </Link>
-          ))}
-        </nav>
+        ))}
+      </nav>
 
-        <hr className='text-muted' />
+      <hr className='text-muted' />
 
-        <div className='flex flex-col gap-10'>
-          {posts.map((post, idx) => (
-            <CardBlog post={post} key={idx} />
-          ))}
-        </div>
+      <section className='my-4 gap-8 flex flex-col'>
+        {posts.map((post, idx) => (
+          <CardBlog post={post} key={idx} />
+        ))}
 
         {posts.length === 0 && (
           <p className='text-muted'>No articles found with this tag yet.</p>
         )}
+      </section>
 
-        <hr className='text-muted' />
-
-        <nav className='flex gap-4 text-sm font-mono'>
-          <Link
-            href='/blog'
-            className='underline decoration-double hover:text-accent'
-          >
-            ← all posts
-          </Link>
-          <Link
-            href='/'
-            className='underline decoration-double hover:text-accent'
-          >
-            home
-          </Link>
-        </nav>
-      </div>
-    </main>
+      <Footer />
+    </>
   )
 }

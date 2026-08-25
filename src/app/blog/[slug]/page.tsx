@@ -4,6 +4,8 @@ import {
   getPostBySlug,
   getReadingTime,
 } from '@/lib/posts'
+import LikeButton from '@/components/blog/like-button'
+import Footer from '@/components/global/footer'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -76,25 +78,14 @@ export default async function PostPage({
               </Link>
             ))}
           </nav>
+
+          <div className='mt-4'>
+            <LikeButton slug={post.slug} />
+          </div>
         </article>
-
-        <hr className='text-muted' />
-
-        <nav className='flex gap-4 text-sm font-mono'>
-          <Link
-            href='/blog'
-            className='underline decoration-double hover:text-accent'
-          >
-            ← back to the blog
-          </Link>
-          <Link
-            href='/'
-            className='underline decoration-double hover:text-accent'
-          >
-            home
-          </Link>
-        </nav>
       </div>
+
+      <Footer />
     </>
   )
 }
