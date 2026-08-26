@@ -48,7 +48,7 @@ export default async function TagPage({
 
       <hr className='text-muted' />
 
-      <section className='my-4 gap-8 flex flex-col'>
+      <section className='mt-2 my-4 gap-8 flex flex-col'>
         {posts.map((post, idx) => (
           <CardBlog post={post} key={idx} />
         ))}
