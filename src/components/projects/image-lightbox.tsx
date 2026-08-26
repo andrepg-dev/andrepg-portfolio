@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useCallback, useId } from "react"
+import { useRef, useCallback, useId, useEffect } from "react"
 import Image, { type ImageProps } from "next/image"
 
 interface ImageLightboxProps extends Omit<ImageProps, "onClick"> {
@@ -16,6 +16,7 @@ export default function ImageLightbox({
   const dialogRef = useRef<HTMLDialogElement>(null)
   const thumbRef = useRef<HTMLImageElement>(null)
   const fullRef = useRef<HTMLImageElement>(null)
+  const closingRef = useRef(false)
 
   const open = useCallback(() => {
     const dialog = dialogRef.current
@@ -42,28 +43,46 @@ export default function ImageLightbox({
     const dialog = dialogRef.current
     const thumb = thumbRef.current
     const full = fullRef.current
-    if (!dialog || !thumb || !full) return
+    if (!dialog || !thumb || !full || closingRef.current) return
 
-    full.style.viewTransitionName = ""
+    closingRef.current = true
+    full.style.viewTransitionName = transitionId
 
     if (!document.startViewTransition) {
       dialog.close()
+      full.style.viewTransitionName = ""
+      closingRef.current = false
       return
     }
 
     document.startViewTransition(() => {
+      full.style.viewTransitionName = ""
       thumb.style.viewTransitionName = transitionId
       dialog.close()
     }).finished.then(() => {
       thumb.style.viewTransitionName = ""
+      closingRef.current = false
     })
   }, [transitionId])
+
+  useEffect(() => {
+    const dialog = dialogRef.current
+    if (!dialog) return
+
+    const handleCancel = (e: Event) => {
+      e.preventDefault()
+      close()
+    }
+
+    dialog.addEventListener("cancel", handleCancel)
+    return () => dialog.removeEventListener("cancel", handleCancel)
+  }, [close])
 
   return (
     <>
       <button
         type="button"
-        onClick={open}
+        onClick={(e) => { e.stopPropagation(); open() }}
         className="shrink-0 cursor-zoom-in"
       >
         <Image {...imageProps} ref={thumbRef} />
@@ -71,7 +90,7 @@ export default function ImageLightbox({
 
       <dialog
         ref={dialogRef}
-        onClick={close}
+        onClick={(e) => { e.stopPropagation(); close() }}
         className="bg-transparent rounded-xl p-0 border-0 outline-none shadow-2xl m-auto"
       >
         <form method="dialog">
@@ -89,7 +108,7 @@ export default function ImageLightbox({
           ref={fullRef}
           src={imageProps.src as string}
           alt={imageProps.alt}
-          className="max-w-[60vw] max-h-[60vh] rounded-xl object-contain"
+          className="max-w-[85vw] sm:max-w-[60vw] max-h-[60vh] rounded-xl object-contain"
         />
       </dialog>
     </>

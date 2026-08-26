@@ -39,48 +39,56 @@ function GitHubIcon({ className }: { className?: string }) {
 }
 
 export default function ProjectItem({ project }: { project: Project }) {
+  const navigate = () => {
+    window.open(project.url, "_blank", "noopener,noreferrer")
+  }
+
   return (
     <div className={`py-4 ${hankenGrotesk.className}`}>
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="font-semibold text-foreground">{project.title}</span>
-            <span className="text-sm text-muted">{project.tag}</span>
-          </div>
-          <p className="text-muted text-sm mb-3">{project.description}</p>
-          <div className="flex items-center gap-3">
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-muted border border-border rounded px-2.5 py-1 hover:text-foreground hover:border-foreground transition-colors"
-            >
-              <LinkIcon className="w-3.5 h-3.5" />
-              Website
-            </a>
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-muted border border-border rounded px-2.5 py-1 hover:text-foreground hover:border-foreground transition-colors"
+      <div
+        role="link"
+        tabIndex={0}
+        onClick={navigate}
+        onKeyDown={(e) => { if (e.key === "Enter") navigate() }}
+        className="group block cursor-pointer"
+      >
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="font-semibold text-foreground decoration-double underline-offset-4 group-hover:underline">{project.title}</span>
+              <span className="text-sm text-muted">{project.tag}</span>
+            </div>
+            <p className="text-muted text-base mb-3">{project.description}</p>
+            <div className="flex items-center gap-3">
+              <span
+                className="inline-flex items-center gap-1.5 text-xs text-muted border border-border rounded px-2.5 py-1"
               >
-                <GitHubIcon className="w-3.5 h-3.5" />
-                Code
-              </a>
-            )}
+                <LinkIcon className="w-3.5 h-3.5" />
+                Website
+              </span>
+              {project.github && (
+                <button
+                  type="button"
+                  onClick={(e) => { e.stopPropagation(); window.open(project.github, "_blank", "noopener,noreferrer") }}
+                  className="inline-flex items-center gap-1.5 text-xs text-muted border border-border rounded px-2.5 py-1 hover:text-foreground hover:border-foreground transition-colors"
+                >
+                  <GitHubIcon className="w-3.5 h-3.5" />
+                  Code
+                </button>
+              )}
+            </div>
           </div>
+          {project.img && (
+            <ImageLightbox
+              src={project.img}
+              alt={project.title}
+              width={120}
+              height={80}
+              className="rounded object-cover"
+              transitionName={`lightbox-${project.title.replace(/\s+/g, "-").toLowerCase()}`}
+            />
+          )}
         </div>
-        {project.img && (
-          <ImageLightbox
-            src={project.img}
-            alt={project.title}
-            width={120}
-            height={80}
-            className="rounded object-cover"
-            transitionName={`lightbox-${project.title.replace(/\s+/g, "-").toLowerCase()}`}
-          />
-        )}
       </div>
       <hr className="mt-4 text-border" />
     </div>
