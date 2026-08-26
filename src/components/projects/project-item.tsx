@@ -1,7 +1,7 @@
 "use client"
 
-import Image from "next/image"
 import { Hanken_Grotesk } from "next/font/google"
+import ImageLightbox from "./image-lightbox"
 import type { Project } from "@/lib/projects"
 
 const hankenGrotesk = Hanken_Grotesk({ subsets: ["latin"] })
@@ -72,15 +72,14 @@ export default function ProjectItem({ project }: { project: Project }) {
           </div>
         </div>
         {project.img && (
-          <a href={project.img} target="_blank" rel="noopener noreferrer" className="shrink-0">
-            <Image
-              src={project.img}
-              alt={project.title}
-              width={120}
-              height={80}
-              className="rounded object-cover"
-            />
-          </a>
+          <ImageLightbox
+            src={project.img}
+            alt={project.title}
+            width={120}
+            height={80}
+            className="rounded object-cover"
+            transitionName={`lightbox-${project.title.replace(/\s+/g, "-").toLowerCase()}`}
+          />
         )}
       </div>
       <hr className="mt-4 text-border" />
