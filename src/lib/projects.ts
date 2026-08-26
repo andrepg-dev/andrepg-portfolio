@@ -17,6 +17,7 @@ export const projects: Project[] = [
       "Use artificial intelligence to your advantage: accelerate your learninganalyze your PDF, DOCx, TXT and videos with a single click.",
     tag: "Weekend",
     url: "https://smartcript.vercel.app/",
+    github: "https://github.com/andrepg-dev/SmartCript",
     img: "/projects/smartcript.webp",
     technologies: [
       "next.js",
@@ -28,6 +29,16 @@ export const projects: Project[] = [
     ],
     date: "April 25, 2024",
     status: "active",
+  },
+  {
+    title: "Portfolio",
+    description:
+      "My personal portfolio website. Built with Next.js, Tailwind CSS, and deployed on Vercel.",
+    tag: "December 23, 2023",
+    url: "https://andrepg.vercel.app/",
+    img: "/projects/portfolio.png",
+    technologies: ["next.js", "tailwind css", "typescript"],
+    date: "December 23, 2023",
   },
   {
     title: "Short URL",
@@ -52,6 +63,7 @@ export const projects: Project[] = [
       "NinjaJS is a JavaScript compiler based on RunJS, allowing developers to write and compile code efficiently.",
     tag: "Weekend",
     url: "https://ninjajs.vercel.app/",
+    github: "https://github.com/andrepg-dev/runjs",
     img: "/projects/ninjajs.webp",
     technologies: [
       "next.js",
@@ -76,6 +88,35 @@ export const projects: Project[] = [
     date: "January 17, 2024",
   },
   {
+    title: "E-commerce",
+    description:
+      "E-commerce platform with a wide selection of products. Intuitive interface, varied content.",
+    tag: "December 21, 2023",
+    url: "https://czmobile.vercel.app",
+    github: "https://github.com/andrepg-dev/CZMobile-Ecommerce",
+    img: "/projects/czmobile.webp",
+    technologies: [
+      "next.js",
+      "redux toolkit",
+      "shadcn/ui",
+      "typescript",
+      "tailwind css",
+    ],
+    date: "December 21, 2023",
+  },
+  {
+    title: "Google Translator clone",
+    description:
+      "Global translation app 🌍🔤 Translate multiple languages, copy, paste and listen to text with ease. Communication without borders.",
+    tag: "November 23, 2023",
+    url: "https://go-translator.vercel.app/",
+    github:
+      "https://github.com/andrepg-dev/NextJS-Projects/tree/main/projects/03-translator-app",
+    img: "/projects/translator.webp",
+    technologies: ["next.js", "typescript", "tailwind css", "shadcn/ui"],
+    date: "November 23, 2023",
+  },
+  {
     title: "Twitter clone",
     description:
       "Social network for mobile 📱🐦 Share ideas, news and thoughts in optimized mobile dimensions. Connect with the world in the palm of your hand.",
@@ -94,27 +135,22 @@ export const projects: Project[] = [
     date: "November 20, 2023",
   },
   {
-    title: "E-commerce",
+    title: "Next Crud application",
     description:
-      "E-commerce platform with a wide selection of products. Intuitive interface, varied content.",
-    tag: "Open source",
-    url: "https://czmobile.vercel.app",
-    github: "https://github.com/andrepg-dev/CZMobile-Ecommerce",
-    img: "/projects/czmobile.webp",
-    technologies: [
-      "next.js",
-      "redux toolkit",
-      "shadcn/ui",
-      "typescript",
-      "tailwind css",
-    ],
-    date: "December 21, 2023",
+      "Using React Context API and storing data in localstorage, with which you can create, read, update and delete data.",
+    tag: "October 10, 2023",
+    url: "https://app-crud-nextjs.vercel.app/",
+    github:
+      "https://github.com/andrepg-dev/NextJS-Projects/tree/main/projects/01-crud-nextjs",
+    img: "/projects/crud-nextjs.webp",
+    technologies: ["next.js", "tailwind css", "javascript"],
+    date: "October 10, 2023",
   },
   {
     title: "Cuevana clone",
     description:
       "Streaming platform with a wide selection of movies and series. Intuitive interface, varied content.",
-    tag: "Open source",
+    tag: "September 4, 2023",
     url: "https://cuevana8-clon.vercel.app/",
     github: "https://github.com/andrepg-dev/Cuevana-8-clon",
     img: "/projects/cuevana.webp",
@@ -128,16 +164,15 @@ export const projects: Project[] = [
     date: "September 4, 2023",
   },
   {
-    title: "Google Translator clone",
+    title: "Code Editor",
     description:
-      "Global translation app 🌍🔤 Translate multiple languages, copy, paste and listen to text with ease. Communication without borders.",
-    tag: "Open source",
-    url: "https://go-translator.vercel.app/",
-    github:
-      "https://github.com/andrepg-dev/NextJS-Projects/tree/main/projects/03-translator-app",
-    img: "/projects/translator.webp",
-    technologies: ["next.js", "typescript", "tailwind css", "shadcn/ui"],
-    date: "November 23, 2023",
+      "Simple applications with a code editor. Supported languages HTML, CSS and JavaScript, using Angular Monaco Editor NPM package.",
+    tag: "Juny 10, 2023",
+    url: "https://c0d3.netlify.app/",
+    github: "https://github.com/andrepg-dev/Code-Editor",
+    img: "/projects/code-editor.webp",
+    technologies: ["angular", "bootstrap", "typescript", "google fonts"],
+    date: "Juny 10, 2023",
   },
   {
     title: "Chat application",
@@ -161,7 +196,7 @@ export const projects: Project[] = [
     title: "Angular Translator",
     description:
       "Project built with Angular, using the Google Translate API to translate text in different languages, including listening to text and speaking through a microphone.",
-    tag: "Open source",
+    tag: "April 21, 2023",
     url: "https://andrepg-dev.github.io/Angular-Translator/",
     github: "https://github.com/andrepg-dev/Angular-Translator",
     img: "/projects/angular-translator.webp",
@@ -169,32 +204,10 @@ export const projects: Project[] = [
     date: "April 21, 2023",
   },
   {
-    title: "Form builder",
-    description:
-      "Platform to easily create and manage forms, with delete and create functions. Simplify your workflow",
-    tag: "Open source",
-    url: "https://cuestionario-ef58b.web.app/",
-    github: "https://github.com/andrepg-dev/Form-Builder",
-    img: "/projects/form-builder.webp",
-    technologies: ["angular", "firebase", "bootstrap", "google fonts"],
-    date: "April 1, 2023",
-  },
-  {
-    title: "Gif World App",
-    description:
-      "Application to find the best gifs, using the Giphy API you can download and share the gifs that you like the most",
-    tag: "Open source",
-    url: "https://andrepg-dev.github.io/Gif-APP/",
-    github: "https://github.com/andrepg-dev/Gif-APP",
-    img: "/projects/gifworld.webp",
-    technologies: ["angular", "google fonts", "bootstrap", "typescript"],
-    date: "March 11, 2023",
-  },
-  {
     title: "QR Code Generator",
     description:
       "Application created to generate QR codes quickly and easily with the ability to download and share them ✅",
-    tag: "Open source",
+    tag: "April 14, 2023",
     url: "https://andrepg-dev.github.io/Angular-QRCode/",
     github: "https://github.com/andrepg-dev/Angular-QRCode",
     img: "/projects/angular-qrcode.webp",
@@ -202,21 +215,21 @@ export const projects: Project[] = [
     date: "April 14, 2023",
   },
   {
-    title: "Code Editor",
+    title: "Form builder",
     description:
-      "Simple applications with a code editor. Supported languages HTML, CSS and JavaScript, using Angular Monaco Editor NPM package.",
-    tag: "Open source",
-    url: "https://c0d3.netlify.app/",
-    github: "https://github.com/andrepg-dev/Code-Editor",
-    img: "/projects/code-editor.webp",
-    technologies: ["angular", "bootstrap", "typescript", "google fonts"],
-    date: "Juny 10, 2023",
+      "Platform to easily create and manage forms, with delete and create functions. Simplify your workflow",
+    tag: "April 1, 2023",
+    url: "https://cuestionario-ef58b.web.app/",
+    github: "https://github.com/andrepg-dev/Form-Builder",
+    img: "/projects/form-builder.webp",
+    technologies: ["angular", "firebase", "bootstrap", "google fonts"],
+    date: "April 1, 2023",
   },
   {
     title: "Voice Worx App",
     description:
       "Voice recorder running natively with the browser and uploaded to a database to save files. 🎤🗂️",
-    tag: "Open source",
+    tag: "March 22, 2023",
     url: "https://andrepg-dev.github.io/Voice-Worx/",
     github: "https://github.com/andrepg-dev/Voice-Worx",
     img: "/projects/voice-worx.webp",
@@ -224,15 +237,14 @@ export const projects: Project[] = [
     date: "March 22, 2023",
   },
   {
-    title: "Next Crud application",
+    title: "Gif World App",
     description:
-      "Using React Context API and storing data in localstorage, with which you can create, read, update and delete data.",
-    tag: "Open source",
-    url: "https://app-crud-nextjs.vercel.app/",
-    github:
-      "https://github.com/andrepg-dev/NextJS-Projects/tree/main/projects/01-crud-nextjs",
-    img: "/projects/crud-nextjs.webp",
-    technologies: ["next.js", "tailwind css", "javascript"],
-    date: "October 10, 2023",
+      "Application to find the best gifs, using the Giphy API you can download and share the gifs that you like the most",
+    tag: "March 11, 2023",
+    url: "https://andrepg-dev.github.io/Gif-APP/",
+    github: "https://github.com/andrepg-dev/Gif-APP",
+    img: "/projects/gifworld.webp",
+    technologies: ["angular", "google fonts", "bootstrap", "typescript"],
+    date: "March 11, 2023",
   },
 ]
