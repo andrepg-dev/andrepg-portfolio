@@ -20,7 +20,7 @@ export default function CardBlog({
     <Link
       href={`/blog/${post.slug}`}
       key={post.slug}
-      className='flex flex-row border-black/20 group my-4 gap-4'
+      className='flex flex-col sm:flex-row border-black/20 group my-4 gap-4'
     >
       <div className='flex flex-col justify-center flex-1 min-w-0'>
         <h2 className='mt-1 text-accent'>{post.title}</h2>
@@ -34,7 +34,7 @@ export default function CardBlog({
       </div>
 
       {post.image && (
-        <div className='relative w-40 h-auto min-h-[120px] shrink-0 overflow-hidden'>
+        <div className='relative w-full sm:w-40 h-48 sm:h-auto min-h-[120px] shrink-0 overflow-hidden'>
           <Image
             src={post.image}
             alt={post.title}

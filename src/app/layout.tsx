@@ -48,7 +48,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
             __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}`,
           }}
         />
-        <main className='mx-auto w-full max-w-2xl px-6 py-24 text-xl'>
+        <main className='mx-auto w-full max-w-2xl px-4 sm:px-6 py-24 text-xl'>
           {children}
         </main>
       </body>

@@ -56,8 +56,8 @@ export default function Footer() {
   const normalize = (path: string) => path.replace(/\/+$/, '') || '/'
 
   return (
-    <footer className='flex items-center justify-between gap-4'>
-      <nav className='flex gap-4'>
+    <footer className='flex flex-col sm:flex-row items-center justify-between gap-4'>
+      <nav className='flex flex-wrap justify-center gap-4'>
         {links
           .filter((link) => !(normalize(pathname) === '/' && link.href === '/'))
           .map((link) => (
