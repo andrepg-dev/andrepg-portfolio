@@ -8,9 +8,37 @@ export interface Project {
   technologies?: string[]
   date?: string
   status?: "active" | "inactive"
+  highlight?: boolean
 }
 
 export const projects: Project[] = [
+  {
+    title: "Madoo AI",
+    description:
+      "AI-powered email template generator for non-technical users.",
+    tag: "AI",
+    url: "https://madooai.com",
+    img: "/projects/madoo-transparent.png",
+    highlight: true,
+  },
+  {
+    title: "Zot",
+    description:
+      "Open source waitlist management platform with built-in analytics and SDK.",
+    tag: "Open source",
+    url: "https://zot.so",
+    img: "/projects/zot.jpeg",
+    highlight: true,
+  },
+  {
+    title: "Hopta",
+    description:
+      "Real estate platform with geospatial search for students in Tegucigalpa.",
+    tag: "Product",
+    url: "https://hopta.hn",
+    img: "/projects/hopta-icon.svg",
+    highlight: true,
+  },
   {
     title: "SmartCript",
     description:
