@@ -15,7 +15,7 @@ export const certifications: Certification[] = [
     date: "July 2026",
     url: "https://www.udemy.com/certificate/UC-f304f2d3-8d20-436e-a123-1118c44c0343/",
     logo: "/certifications/udemy.png",
-    skills: ["LangChain", "LangGraph", "Agentic AI", "Agent Design"],
+    skills: ["LangChain", "LangGraph", "Prompt Engineering", "RAG", "MCP", "Context Engineering"],
     status: "completed",
   },
   {

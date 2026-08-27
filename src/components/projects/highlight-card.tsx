@@ -48,7 +48,7 @@ export default function HighlightCard({ project }: { project: Project }) {
       rel='noopener noreferrer'
       className={`group block border border-border bg-muted/5 rounded-lg p-4 hover:border-foreground/30 transition-colors ${hankenGrotesk.className}`}
     >
-      <div className='flex items-start justify-between mb-2'>
+      <div className='flex items-start justify-between mb-1'>
         <div className='flex items-center gap-2'>
           {project.img ? (
             <Image
@@ -63,7 +63,7 @@ export default function HighlightCard({ project }: { project: Project }) {
               <ProjectIcon className='w-4 h-4 text-muted' />
             </div>
           )}
-          <span className='font-semibold text-foreground text-lg'>
+          <span className='font-semibold text-foreground text-base'>
             {project.title}
           </span>
         </div>
