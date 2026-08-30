@@ -19,27 +19,23 @@ export async function GET(request: Request) {
             background: 'linear-gradient(135deg, #f5fbff 0%, #ffffff 100%)',
             padding: '60px',
             justifyContent: 'space-between',
-            fontFamily: '"Literata", serif',
+            fontFamily: 'system-ui, -apple-system, sans-serif',
           }}
         >
-          {/* Main Content */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center' }}>
             <h1
               style={{
-                fontSize: '64px',
+                fontSize: '56px',
                 fontWeight: 'bold',
                 color: '#12283f',
                 margin: '0 0 40px 0',
                 lineHeight: '1.2',
-                maxHeight: '400px',
-                overflow: 'hidden',
               }}
             >
               {title}
             </h1>
           </div>
 
-          {/* Footer */}
           <div
             style={{
               display: 'flex',
@@ -71,7 +67,7 @@ export async function GET(request: Request) {
                   color: 'white',
                 }}
               >
-                {author.charAt(0).toUpperCase()}
+                A
               </div>
               <div>
                 <p style={{ margin: '0', color: '#12283f', fontSize: '18px', fontWeight: '600' }}>
@@ -87,7 +83,6 @@ export async function GET(request: Request) {
                 color: '#4a6076',
                 fontSize: '14px',
                 margin: '0',
-                fontFamily: '"Fira Code", monospace',
               }}
             >
               andre.zot.so
@@ -101,7 +96,7 @@ export async function GET(request: Request) {
       },
     )
   } catch (error) {
-    console.error('Error generating OG image:', error)
-    return new Response('Failed to generate OG image', { status: 500 })
+    console.error('OG error:', error)
+    return new Response('Failed', { status: 500 })
   }
 }

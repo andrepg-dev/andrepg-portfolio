@@ -28,13 +28,14 @@ export async function generateMetadata({
   }
 
   const ogUrl = `/api/og?title=${encodeURIComponent(post.title)}&author=${encodeURIComponent(post.author)}`
+  const shortExcerpt = post.excerpt.substring(0, 120)
 
   return {
     title: post.title,
-    description: post.excerpt,
+    description: shortExcerpt,
     openGraph: {
       title: post.title,
-      description: post.excerpt,
+      description: shortExcerpt,
       type: 'article',
       url: `https://andre.zot.so/blog/${slug}`,
       images: [
@@ -49,7 +50,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: post.excerpt,
+      description: shortExcerpt,
       images: [ogUrl],
     },
   }

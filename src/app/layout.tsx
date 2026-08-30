@@ -30,10 +30,10 @@ const firaCode = Fira_Code({
 
 export const metadata: Metadata = {
   title: "Andre Ponce's Blog",
-  description: 'Thoughts on software development, AI agents, and books that shaped how I think. Exploring code, learning, and innovation.',
+  description: 'Insights on code, AI agents, and books that shaped my thinking.',
   openGraph: {
     title: "Andre Ponce's Blog",
-    description: 'Thoughts on software development, AI agents, and books that shaped how I think.',
+    description: 'Insights on code, AI agents, and books that shaped my thinking.',
     type: 'website',
     url: 'https://andre.zot.so',
     siteName: "Andre Ponce's Blog",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Andre Ponce's Blog",
-    description: 'Thoughts on software development, AI agents, and books that shaped how I think.',
+    description: 'Insights on code, AI agents, and books that shaped my thinking.',
     images: ['/api/og?title=Andre%20Ponce%27s%20Blog&author=Andre%20Ponce'],
   },
 }
