@@ -34,7 +34,7 @@ export default function CardBlog({
       </div>
 
       {post.image && (
-        <div className='relative w-full sm:w-40 h-48 sm:h-auto min-h-[120px] shrink-0 overflow-hidden'>
+        <div className='relative w-full sm:w-40 h-48 sm:h-auto min-h-30 shrink-0 overflow-hidden'>
           <Image
             src={post.image}
             alt={post.title}

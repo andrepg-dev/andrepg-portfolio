@@ -13,10 +13,7 @@ One of the benefits of RAG systems is that we can connect the LLM directly to li
 ##### How a RAG system work
 First, the prompt is provided. We then search our vector store database for relevant information, send both the prompt and that context to the LLM, and generate the response.
 
-
-![[RAG image.png]]
-
-
+![[RAG image.png|700]]
 
 Referencias
 https://aws.amazon.com/es/what-is/retrieval-augmented-generation/
