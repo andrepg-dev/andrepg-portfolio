@@ -29,6 +29,7 @@ const firaCode = Fira_Code({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://andre.zot.so'),
   title: "Andre Ponce's Blog",
   description: 'Insights on code, AI agents, and books that shaped my thinking.',
   openGraph: {
