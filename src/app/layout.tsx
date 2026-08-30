@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Andre Ponce's Blog",
     images: [
       {
-        url: '/api/og?title=Andre%20Ponce%27s%20Blog&author=Andre%20Ponce',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: "Andre Ponce's Blog",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Andre Ponce's Blog",
     description: 'Thoughts on software development, AI agents, and books that shaped how I think.',
-    images: ['/api/og?title=Andre%20Ponce%27s%20Blog&author=Andre%20Ponce'],
+    images: ['/og-image.png'],
   },
 }
 
