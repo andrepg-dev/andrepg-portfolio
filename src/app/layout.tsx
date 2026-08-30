@@ -31,6 +31,27 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   title: "Andre Ponce's Blog",
   description: 'Thoughts on software development, AI agents, and books that shaped how I think. Exploring code, learning, and innovation.',
+  openGraph: {
+    title: "Andre Ponce's Blog",
+    description: 'Thoughts on software development, AI agents, and books that shaped how I think.',
+    type: 'website',
+    url: 'https://andre.zot.so',
+    siteName: "Andre Ponce's Blog",
+    images: [
+      {
+        url: '/api/og?title=Andre%20Ponce%27s%20Blog&author=Andre%20Ponce',
+        width: 1200,
+        height: 630,
+        alt: "Andre Ponce's Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Andre Ponce's Blog",
+    description: 'Thoughts on software development, AI agents, and books that shaped how I think.',
+    images: ['/api/og?title=Andre%20Ponce%27s%20Blog&author=Andre%20Ponce'],
+  },
 }
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
