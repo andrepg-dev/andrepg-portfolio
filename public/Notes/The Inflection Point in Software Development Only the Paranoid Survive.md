@@ -24,4 +24,4 @@ So yeah, as you can see, there is not a clear path for software development, all
 
 Thanks for reading!, I really appreciate your time.
 
-Disclaimer: These are my thoughts, I could be completely wrong about everything here, in that case, just let me know on my [twitter](https://x.com/iandrepg). I want to know your thoughts about it, don't be afraid to contact me, I'll be completely open to receive it, and maybe talk a little bit about it.
+Disclaimer: These are my thoughts, if you have any suggestion, let me know on my [twitter](https://x.com/iandrepg). I want to know your thoughts about it, don't be afraid to contact me, I'll be completely open to receive it, and maybe talk a little bit about it.
