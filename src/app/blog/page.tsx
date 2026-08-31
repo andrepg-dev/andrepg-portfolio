@@ -11,7 +11,7 @@ export default function BlogPage() {
   return (
     <>
       <Header
-        description='Thoughts on code, AI agents, and books that shaped how I think.'
+        description='Exploring insights about software development, AI, and continuous learning.'
         section='Blog'
       />
 
