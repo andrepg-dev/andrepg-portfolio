@@ -53,7 +53,7 @@ export default function HomePage() {
           I've been a professional Software Engineer for over 4 years, starting
           remotely at{' '}
           <Link
-            href={'https://en.shimliapp.com/'}
+            href={'https://shimliapp.com/'}
             target='_blank'
             className='underline decoration-double hover:text-accent'
           >
