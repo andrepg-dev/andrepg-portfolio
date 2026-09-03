@@ -65,9 +65,18 @@ function convertObsidianEmbeds(content: string): string {
   )
 }
 
+function slugify(name: string): string {
+  return name
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
 function convertObsidianLinks(content: string): string {
   return content.replace(/\[\[([^\]]+)\]\]/g, (_, noteName) => {
-    const slug = noteName.toLowerCase().replace(/\s+/g, '-')
+    const slug = slugify(noteName)
     return `[${noteName}](/blog/${slug})`
   })
 }
@@ -101,10 +110,12 @@ function getAllMarkdownFiles(): Post[] {
     const raw = fs.readFileSync(filePath, 'utf-8')
     const { data, content } = matter(raw)
     const stat = fs.statSync(filePath)
-    const slug = file.replace(/\.md$/, '').toLowerCase().replace(/\s+/g, '-')
-    const title = slug
-      .replace(/[-_]/g, ' ')
-      .replace(/\b\w/g, (c) => c.toUpperCase())
+    const baseName = file.replace(/\.md$/, '')
+    const slug = slugify(baseName)
+    const title = baseName
+      .replace(/[-_]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
     const tags = extractTags(content)
     const cleanContent = stripTags(content)
     const processedContent = convertLatex(
