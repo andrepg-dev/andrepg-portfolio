@@ -44,13 +44,14 @@ export default function HomePage() {
         </h4>
 
         <p>
-          I've been coding since I was 14, starting on SoloLearn (yeah, from my
-          phone). From there I got hooked on CyberSecurity, mobile, and
-          frontend/backend dev.
+          I have been coding since the age of 14, having started on SoloLearn
+          from a mobile device. This early exposure led to a lasting interest in
+          cybersecurity, mobile development, and full-stack engineering.
         </p>
 
         <p>
-          Landed my first job at 19, working remotely at{' '}
+          I began my professional career at 19, working remotely as a Software
+          Engineer at{' '}
           <Link
             href={'https://en.shimliapp.com/'}
             target='_blank'
@@ -58,23 +59,26 @@ export default function HomePage() {
           >
             Shimli AI
           </Link>
-          . Built an MCP server there, rewrote the flow builder, shipped mobile
-          apps with React Native, dabbled in Vue too, played around with server
-          actions, a design system, and global state management.
+          , bringing over 4 years of hands-on experience in the software
+          industry to date. In this role, I built an MCP (Model Context
+          Protocol) server, redesigned the core flow builder, and delivered
+          cross-platform mobile applications using React Native, while also
+          working with Vue.js, server actions, design systems, and global state
+          management.
         </p>
 
         <p>
-          These days I'm deep into AI agentic systems, LangChain, LangGraph,
-          LangSmith, powering{' '}
+          Currently, my focus is on AI agentic systems, leveraging LangChain,
+          LangGraph, and LangSmith to power{' '}
           <Link
             className='underline decoration-double hover:text-accent'
             href={'https://madooai.com'}
             target='_blank'
           >
             Madoo AI
-          </Link>{' '}
-          under the hood. Observability, LLM evals, deep agents with long-term
-          memory, tools, MCP servers, the whole stack.
+          </Link>
+          . My work spans observability, LLM evaluation, and the development of
+          deep agents with long-term memory, tool integration, and MCP servers.
         </p>
 
         <ul className='list-disc space-y-2 pl-5 text-xl'>
