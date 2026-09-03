@@ -1,3 +1,7 @@
+---
+created: 2026-08-30
+---
+
 #books #life #review 
 
 I read this book a few months ago, but anyway I want to talk about how this book makes me think about my own path as a software developer, where to go when everything gets automated, how reluctant we are to change, and how the future looks at this certain point.

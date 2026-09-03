@@ -1,3 +1,7 @@
+---
+created: 2026-08-27
+---
+
 #code #ai #short #learning
 
 The objective of a RAG system is to improve the response of the LLM based on a given context. When a RAG system is provided to an LLM, it is no longer depending solely on the information with which it was trained, but rather it obtains all the internal context provided by a vector database, which is created, managed and provided by the team that implements it.

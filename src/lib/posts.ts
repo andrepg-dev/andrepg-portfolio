@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import matter from 'gray-matter'
 import { Marked } from 'marked'
 import hljs from 'highlight.js'
 import { markedHighlight } from 'marked-highlight'
@@ -98,13 +99,14 @@ function getAllMarkdownFiles(): Post[] {
   return files.map((file) => {
     const filePath = path.join(NOTES_DIR, file)
     const raw = fs.readFileSync(filePath, 'utf-8')
+    const { data, content } = matter(raw)
     const stat = fs.statSync(filePath)
     const slug = file.replace(/\.md$/, '').toLowerCase().replace(/\s+/g, '-')
     const title = slug
       .replace(/[-_]/g, ' ')
       .replace(/\b\w/g, (c) => c.toUpperCase())
-    const tags = extractTags(raw)
-    const cleanContent = stripTags(raw)
+    const tags = extractTags(content)
+    const cleanContent = stripTags(content)
     const processedContent = convertLatex(
       convertObsidianLinks(convertObsidianEmbeds(cleanContent)),
     )
@@ -113,7 +115,7 @@ function getAllMarkdownFiles(): Post[] {
       slug,
       title,
       author: 'André Ponce',
-      date: stat.mtime.toISOString(),
+      date: (data.created ? new Date(data.created) : stat.mtime).toISOString(),
       tags,
       excerpt: cleanContent.slice(0, 160),
       content: processedContent,

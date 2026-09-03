@@ -44,14 +44,14 @@ export default function HomePage() {
         </h4>
 
         <p>
-          I have been coding since the age of 14, having started on SoloLearn
-          from a mobile device. This early exposure led to a lasting interest in
-          cybersecurity, mobile development, and full-stack engineering.
+          I've been coding since I was 14, starting on SoloLearn from my phone.
+          That sparked a lasting interest in cybersecurity, mobile development,
+          and full-stack engineering.
         </p>
 
         <p>
-          I began my professional career at 19, working remotely as a Software
-          Engineer at{' '}
+          I've been a professional Software Engineer for over 4 years, starting
+          remotely at{' '}
           <Link
             href={'https://en.shimliapp.com/'}
             target='_blank'
@@ -59,17 +59,14 @@ export default function HomePage() {
           >
             Shimli AI
           </Link>
-          , bringing over 4 years of hands-on experience in the software
-          industry to date. In this role, I built an MCP (Model Context
-          Protocol) server, redesigned the core flow builder, and delivered
-          cross-platform mobile applications using React Native, while also
-          working with Vue.js, server actions, design systems, and global state
-          management.
+          , where I built an MCP server, redesigned the flow builder, and shipped
+          mobile apps with React Native, plus Vue.js, server actions, design
+          systems, and state management.
         </p>
 
         <p>
-          Currently, my focus is on AI agentic systems, leveraging LangChain,
-          LangGraph, and LangSmith to power{' '}
+          Currently, I focus on AI agentic systems with LangChain, LangGraph,
+          and LangSmith powering{' '}
           <Link
             className='underline decoration-double hover:text-accent'
             href={'https://madooai.com'}
@@ -77,8 +74,8 @@ export default function HomePage() {
           >
             Madoo AI
           </Link>
-          . My work spans observability, LLM evaluation, and the development of
-          deep agents with long-term memory, tool integration, and MCP servers.
+          — observability, LLM evaluation, and deep agents with long-term
+          memory, tools, and MCP servers.
         </p>
 
         <ul className='list-disc space-y-2 pl-5 text-xl'>
