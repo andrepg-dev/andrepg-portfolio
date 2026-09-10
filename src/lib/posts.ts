@@ -18,6 +18,14 @@ const marked = new Marked(
   }),
 )
 
+marked.use({
+  walkTokens(token) {
+    if (token.type === 'text' && token.text) {
+      token.text = token.text.replace(/->/g, '→')
+    }
+  },
+})
+
 export interface Post {
   slug: string
   title: string

@@ -7,7 +7,7 @@ One of the most important parts of a [[RAG (Retrieval Augmented Generation)]] sy
 ###### Standard Chunking
 This chunking method is used fixed size, this method doesn't care about meaning, good fit if you're learning how to use chunking, but I wouldn't recommend this for production systems.
 
-######  Hierarchical Chunking
+##### Hierarchical Chunking
 Nested parent/child chunks -> This method is a little bit more complex to understand, but I'll illustrate this in this way
 
 Assuming that we have this document:  
@@ -32,10 +32,10 @@ for its medicinal properties before becoming a common household beverage. It has
 **5  ->** also many wars and trade disputes, remaining essentially the same simple drink today. It was popularised thanks  
 **6  ->** to trade routes and more recently through modern tea bags and ceremonies including many varieties of tea.  
 
-The way that this method works when we search on it is like this:
+The way that this method works when we search on it is like this
 User Prompt -> search based on the small chunks -> retrieve the parent chunk
 
 In that way, we have the hole context and it's less probable that the LLM has hallucination, also when we search in a RAG system, he finds better results in small chunks, this is also one of the main reasons that you should probably need this.
 
-###### Semantic Chunking
+##### Semantic Chunking
 In this case, we have an LLM that separates chunking by meaning, not things like sentences or fixed chunk sized
