@@ -6,6 +6,7 @@ import {
   getReadingTime,
 } from '@/lib/posts'
 import LikeButton from '@/components/blog/like-button'
+import MarkdownContent from '@/components/blog/markdown-content'
 import Footer from '@/components/global/footer'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -104,10 +105,7 @@ export default async function PostPage({
             </span>
           </div>
 
-          <div
-            className='prose max-w-none text-xl'
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+          <MarkdownContent html={post.html} />
 
           <nav className='flex flex-wrap items-center gap-2 text-sm font-mono mt-6'>
             {post.tags.map((tag) => (
