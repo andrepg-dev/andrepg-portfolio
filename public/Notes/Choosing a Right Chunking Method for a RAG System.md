@@ -45,3 +45,5 @@ Space, the final frontier. These are the voyages of the Starship Enterprise.
 
 Semantic Meaning:
 Space, the final frontier. These are the voyages of the Starship Enterprise.
+
+This is all part of the same idea, so it would probably just keep it all together as long as it’s within your max token. 
