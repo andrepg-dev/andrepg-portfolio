@@ -38,4 +38,10 @@ User Prompt -> search based on the small chunks -> retrieve the parent chunk
 In that way, we have the hole context and it's less probable that the LLM has hallucination, also when we search in a RAG system, he finds better results in small chunks, this is also one of the main reasons that you should probably need this.
 
 ##### Semantic Chunking
-In this case, we have an LLM that separates chunking by meaning, not things like sentences or fixed chunk sized
+In this case, we have an LLM that separates chunking by meaning, not things like sentences or fixed chunk sized, this method cost money
+
+Document:
+Space, the final frontier. These are the voyages of the Starship Enterprise.
+
+Semantic Meaning:
+Space, the final frontier. These are the voyages of the Starship Enterprise.
