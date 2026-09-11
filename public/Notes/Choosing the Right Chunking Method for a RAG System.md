@@ -1,5 +1,8 @@
-#code #ai 
+---
+created: 2026-09-10
+---
 
+#code #ai 
 #### Introduction
 One of the most important parts of a [[RAG (Retrieval Augmented Generation)]] system is choosing the best type of chunking. Unlike what we learn at first, when we simply use a basic one, which is fixed chunking, I'll show you the different types of chunking for a RAG system, and you should use the one that best fits your needs.
 
@@ -56,3 +59,5 @@ This is all part of the same idea, so it would probably just keep it all togethe
 The type of chunking you choose is just one part of the picture, but choosing the right one will improve the results of your agentic system. You can implement a **Context Grounding Check** and **Relevance** check to have an LLM validate whether the response is grounded in your source and relevant to the query, filtering out anything below the threshold you set.
 
 Hope you like it, and that it helps you make a good decision :)
+
+
