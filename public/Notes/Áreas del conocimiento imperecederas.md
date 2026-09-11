@@ -1,17 +1,17 @@
 ---
 created: 2026-09-10
 ---
-#life #book
+#life #books
 
 Estuve leyendo un poco de Taleb ahora mismo, me llamó la atención algo que él mencionó acerca de lo perecedero y lo imperecedero, esto es muy similar a lo que es la programación, un área en la que cada día de vida es más corto (lo perecedero), a diferencia de lo imperecedero que cada día puede suponer una esperanza de vida más larga.
 
 Y me pregunté, qué áreas del conocimiento han sido las más imperecederas de toda nuestra humanidad, la respuesta puede ser fácil:
 
-1. Matemáticas y lógica – Las matemáticas no dependen de nada más que sus propios números y teorías.
-2. Física – Describe cómo funciona nuestro universo, nuestra realidad física.
-3. Biología – Cómo funciona nuestro cuerpo.
+1. Matemáticas y lógica
+2. Física
+3. Biología
 4. Filosofía
-5. Historia – Es la mejor herramienta para predecir el futuro
+5. Historia
 6. Retórica y comunicación
 
 Y la lista continúa, ya que resulta que, según Taleb[^1], todo lo relacionado a tecnología es frágil, por lo visto lo que es más perecedero son las herramientas, no los principios.
