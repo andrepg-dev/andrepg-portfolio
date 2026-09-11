@@ -26,6 +26,6 @@ Pero bueno, lo importante: ¿realmente las matemáticas, al ser una constante un
 
 Espero que te ayude a pensar qué rama o industria con grandes retornos se puede intersecar con las matemáticas y que además sea imperecedera durante mucho tiempo, hasta luego.
 
-[^1]: https://www.amazon.es/Antifr%C3%A1gil-cosas-benefician-desorden-Transiciones/dp/8449328640↩︎
+[^1]:https://www.goodreads.com/en/book/show/13530973-antifragile
 
-[^2]: https://en.wikipedia.org/wiki/Poor_Charlie's_Almanack↩︎
+[^2]: https://en.wikipedia.org/wiki/Poor_Charlie's_Almanack
