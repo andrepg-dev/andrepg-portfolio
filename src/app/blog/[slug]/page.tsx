@@ -28,7 +28,6 @@ export async function generateMetadata({
     return {}
   }
 
-  const ogUrl = `/api/og?title=${encodeURIComponent(post.title)}&author=${encodeURIComponent(post.author)}`
   const shortExcerpt = post.excerpt.substring(0, 120)
 
   return {
@@ -39,20 +38,11 @@ export async function generateMetadata({
       description: shortExcerpt,
       type: 'article',
       url: `https://andre.zot.so/blog/${slug}`,
-      images: [
-        {
-          url: ogUrl,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: shortExcerpt,
-      images: [ogUrl],
     },
   }
 }
